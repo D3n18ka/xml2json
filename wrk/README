@@ -1,0 +1,10 @@
+wrk -c200 -t2 -d10s  http://localhost:8080/health/live
+
+wrk -c200 -t2 -d10s -s ./post_xml.lua http://localhost:8080/health/live
+
+
+wrk -c200 -t2 -d10s -s ./post_xml.lua http://localhost:8080/message/varchar
+wrk -c200 -t2 -d10s -s ./post_xml.lua http://localhost:8080/batch/varchar
+
+wrk -c200 -t2 -d10s -s ./post_xml.lua http://localhost:8080/message/jsonb
+wrk -c200 -t2 -d10s -s ./post_xml.lua http://localhost:8080/batch/jsonb
